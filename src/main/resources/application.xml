@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean name="pf" class="com.spring.testIoc1.Model.PersonFactory" factory-method="createPerson" />
+
+    <bean id="u2"  class="com.spring.testIoc1.Model.Users"></bean>
+    <bean id="u3" factory-method="createPerson1" factory-bean="u2"></bean>
+
+    <bean id="u4" class="com.spring.testIoc1.ioc.User"></bean>
+    <bean id="m1" factory-method="add" factory-bean="u4"></bean>
+    <bean name="person" class="com.spring.testIoc1.Model.Person">
+        <property name="name" value="jeck" />
+        <property name="age" value="10" />
+    </bean>
+
+
+    <bean id="book" class="com.spring.testIoc1.ioc.Book">
+
+        <property name="bname" value="bookname"></property>
+        <property name="bauthor" value="bookauthor"></property>
+    </bean>
+    <!--        <![CDATA[<<beijing1>>]]>-->
+
+</beans>
